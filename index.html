@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LegacyLoom | Premium Products</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-purple: #6a0dad;
+            --accent-green: #28a745;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            /* This ensures NO scrollbar ever appears */
+            overflow: hidden; 
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            
+            /* --- UPDATED DYNAMIC BACKGROUND (Darker Purple) --- */
+            /* Adjusted to deeper purples #1a0b2e and #240046 to match your request */
+            background: linear-gradient(-45deg, #0f0518, #240046, #1a0b2e, #0d2612);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        /* Background Color Animation */
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* --- Floating Words Container --- */
+        #animation-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0; 
+            pointer-events: none;
+        }
+
+        .floating-tag {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 1rem;
+            font-weight: 700;
+            pointer-events: none;
+            opacity: 0;
+            animation: floatUp 15s linear infinite;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            white-space: nowrap; /* Prevents words from wrapping */
+        }
+
+        /* --- Main Glass Card --- */
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 3.5rem 2rem;
+            border-radius: 24px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            max-width: 500px;
+            width: 90%;
+            z-index: 10;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(12px);
+            animation: popIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.8rem;
+            background: -webkit-linear-gradient(45deg, var(--primary-purple), #333);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 2.5rem;
+            font-weight: 500;
+        }
+
+        .tagline span {
+            color: var(--accent-green);
+            font-weight: 700;
+        }
+
+        /* --- The Big Button --- */
+        .cta-button {
+            display: inline-block;
+            text-decoration: none;
+            background: linear-gradient(135deg, var(--primary-purple) 0%, #8e44ad 100%);
+            color: white;
+            padding: 20px 45px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            box-shadow: 0 10px 25px rgba(106, 13, 173, 0.4);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 15px 35px rgba(40, 167, 69, 0.5); 
+            background: linear-gradient(135deg, var(--accent-green) 0%, #1e7e34 100%);
+        }
+
+        /* --- Social & Footer --- */
+        .social-links {
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .social-btn {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2rem;
+            transition: transform 0.3s;
+            display: inline-block;
+        }
+
+        .social-btn:hover {
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        .handle {
+            font-size: 0.9rem;
+            color: #444;
+            margin-top: 5px;
+            font-weight: 600;
+        }
+
+        .disclaimer {
+            margin-top: 2rem;
+            font-size: 0.65rem;
+            color: #777;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        /* --- Animations --- */
+        @keyframes popIn {
+            from { opacity: 0; transform: scale(0.9) translateY(30px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(110vh) scale(0.8) rotate(0deg); opacity: 0; }
+            20% { opacity: 1; }
+            80% { opacity: 1; }
+            100% { transform: translateY(-10vh) scale(1.1) rotate(20deg); opacity: 0; }
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 480px) {
+            h1 { font-size: 2.2rem; }
+            .container { padding: 2.5rem 1.5rem; width: 85%; }
+            .cta-button { padding: 18px 30px; font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="animation-container"></div>
+
+    <div class="container">
+        <h1>LegacyLoom</h1>
+        
+        <p class="tagline">Premium Products for a <span>Better Life</span></p>
+
+        <a href="https://www.amway.com/myshop/LegacyLoom" class="cta-button">
+            Shop My Store <i class="fas fa-shopping-bag" style="margin-left: 10px;"></i>
+        </a>
+
+        <div class="social-links">
+            <a href="https://instagram.com/kokojam_9" target="_blank" class="social-btn">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <p class="handle">@kokojam_9</p>
+        </div>
+
+        <div class="disclaimer">
+            Amway Independent Business Owner
+        </div>
+    </div>
+
+    <script>
+        // UPDATED WORDS LIST based on your image
+        const words = [
+            "Nutrition", "Vitamins", "Skin Care", "Energy Drinks",
+            "Makeup", "Fragrance", "Hair Care", "Home", 
+            "Wellness", "Supplements", "Beauty"
+        ];
+
+        const container = document.getElementById('animation-container');
+
+        function createFloatingTag() {
+            const tag = document.createElement('div');
+            tag.classList.add('floating-tag');
+            tag.innerText = words[Math.floor(Math.random() * words.length)];
+            
+            // Random horizontal position (0-90%)
+            tag.style.left = Math.random() * 90 + '%';
+            
+            // Random animation duration
+            const duration = 12 + Math.random() * 15;
+            tag.style.animationDuration = duration + 's';
+            
+            // Random font size scale
+            const scale = 0.7 + Math.random() * 0.6;
+            tag.style.transform = `scale(${scale})`;
+
+            container.appendChild(tag);
+
+            // Cleanup
+            setTimeout(() => {
+                tag.remove();
+            }, duration * 1000);
+        }
+
+        // Create a new tag every 1.2 seconds
+        setInterval(createFloatingTag, 1200);
+
+        // Pre-fill screen so it's not empty on load
+        for(let i=0; i<6; i++) {
+            setTimeout(createFloatingTag, i * 400);
+        }
+    </script>
+</body>
+</html>
