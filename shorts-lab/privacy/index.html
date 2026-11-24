@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shorts Lab Privacy Policy</title>
+<meta name="description" content="How Shorts Lab - Psychology Neon accesses, uses, stores and protects Google account data.">
+<style>
+  :root { color-scheme: light dark; --fg:#1b1d22; --muted:#5a6070; --bg:#ffffff; --line:#e3e5ea; --accent:#3b5bdb; }
+  @media (prefers-color-scheme: dark) { :root { --fg:#e8eaf0; --muted:#a3a9b8; --bg:#121418; --line:#2a2e36; --accent:#8da2ff; } }
+  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+  main { max-width:720px; margin:0 auto; padding:48px 16px 64px; }
+  h1 { font-size:1.9rem; line-height:1.25; margin:0 0 8px; }
+  h2 { font-size:1.15rem; margin:32px 0 8px; }
+  .lede { color:var(--muted); margin:0 0 24px; }
+  code { font-size:.92em; word-break:break-all; }
+  a { color:var(--accent); }
+  footer { border-top:1px solid var(--line); margin-top:40px; padding-top:16px; color:var(--muted); font-size:.92rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Shorts Lab Privacy Policy</h1>
+  <p class="lede">Applies to the app "Shorts Lab - Psychology Neon". Last updated 24 November 2026.</p>
+
+  <p>Shorts Lab is a private tool that runs on its owner's own Windows computer. It is used only by the owner of the
+  Psychology Neon YouTube channel to upload and schedule that channel's own videos. It is not offered to the public.
+  See the <a href="https://legacyloom.me/shorts-lab/">Shorts Lab home page</a>.</p>
+
+  <h2>Google data the app accesses</h2>
+  <p>When the owner connects a channel, the app asks Google for two permissions:</p>
+  <ul>
+    <li><code>https://www.googleapis.com/auth/youtube.upload</code>: to upload the channel's own videos, with their title,
+      description, privacy setting and scheduled publish time.</li>
+    <li><code>https://www.googleapis.com/auth/youtube.readonly</code>: to read the connected channel's ID and name, so the
+      app can check it is connected to the right channel; to read the status of videos it uploaded (processing, privacy,
+      scheduled time); and to read the IDs and titles of the channel's most recent uploads, so a video whose upload
+      confirmation was lost is found instead of being uploaded twice.</li>
+  </ul>
+  <p>Narrower permissions would not work: uploading requires <code>youtube.upload</code>, and confirming the channel
+  identity and upload status requires read access. The app does not request access to Gmail, Drive, contacts or any
+  other Google service, and does not read comments, subscribers, analytics or account settings.</p>
+
+  <h2>How the data is used</h2>
+  <p>Google data is used only to publish the owner's videos to the owner's channel and to confirm that publishing worked.
+  It is not used for advertising, profiling, selling, or training AI models.</p>
+
+  <h2>How it is stored and protected</h2>
+  <ul>
+    <li>Everything stays on the owner's computer. There is no Shorts Lab server or cloud account that receives Google data.</li>
+    <li>The Google authorization (refresh) token and OAuth client secret are encrypted with Windows Data Protection (DPAPI)
+      in a file whose permissions are restricted to the owner's Windows account, SYSTEM and Administrators. They are never
+      written to logs, shown in the app's interface, or put in web addresses.</li>
+    <li>The channel ID and name, and the YouTube video IDs, titles and status of uploaded videos, are kept in a local
+      database so the app can track what it published.</li>
+    <li>The app's web interface listens only on the local computer (127.0.0.1) and is not reachable from the internet.</li>
+  </ul>
+  <p>This protects against other people reading the files, but not against someone who controls the owner's Windows account
+  or administrator access to the computer.</p>
+
+  <h2>Sharing</h2>
+  <p>Google user data is not shared with, sold to, or transferred to anyone. The app sends data only to Google's YouTube
+  Data API, to perform the uploads and checks described above.</p>
+  <p>Separately, the owner can use the app to post the same videos to Instagram and TikTok through Buffer, using a
+  Cloudinary link to the video file. These posts use the owner's own Buffer and Cloudinary accounts and video files. No
+  Google account data or Google tokens are sent to those services.</p>
+
+  <h2>Revoking access</h2>
+  <p>Access can be removed at any time at <a href="https://myaccount.google.com/connections">Google Account → Third-party
+  connections</a>, by choosing "Shorts Lab - Psychology Neon" and removing its access. After that, the stored token no
+  longer works and the app stops uploading.</p>
+
+  <h2>Retention and deletion</h2>
+  <p>The token is kept until access is revoked or the connection is replaced. Records of uploaded videos are kept in the
+  local database as a publishing history. To delete all retained data, revoke access as above and delete the Shorts Lab
+  data folder on the computer. Videos already published on YouTube are managed in YouTube Studio and are not deleted by
+  the app.</p>
+
+  <h2>Google API Services User Data Policy</h2>
+  <p>Shorts Lab's use and transfer of information received from Google APIs adheres to the
+  <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>,
+  including the Limited Use requirements.</p>
+
+  <h2>Changes</h2>
+  <p>If the app's use of Google data changes, this page will be updated before the change, with a new date above.</p>
+
+  <h2>Contact</h2>
+  <p>Questions or deletion requests: <a href="mailto:kokoclip007@gmail.com">kokoclip007@gmail.com</a>.</p>
+
+  <footer><p><a href="https://legacyloom.me/shorts-lab/">Shorts Lab home</a></p></footer>
+</main>
+</body>
+</html>

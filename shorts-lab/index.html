@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shorts Lab - Psychology Neon</title>
+<meta name="description" content="Shorts Lab is a private creator tool that uploads and schedules the Psychology Neon channel's own short educational videos through the YouTube Data API.">
+<style>
+  :root { color-scheme: light dark; --fg:#1b1d22; --muted:#5a6070; --bg:#ffffff; --line:#e3e5ea; --accent:#3b5bdb; }
+  @media (prefers-color-scheme: dark) { :root { --fg:#e8eaf0; --muted:#a3a9b8; --bg:#121418; --line:#2a2e36; --accent:#8da2ff; } }
+  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+  main { max-width:720px; margin:0 auto; padding:48px 16px 64px; }
+  h1 { font-size:1.9rem; line-height:1.25; margin:0 0 8px; }
+  h2 { font-size:1.15rem; margin:32px 0 8px; }
+  p, li { color:var(--fg); }
+  .lede { color:var(--muted); font-size:1.05rem; margin:0 0 24px; }
+  a { color:var(--accent); }
+  footer { border-top:1px solid var(--line); margin-top:40px; padding-top:16px; color:var(--muted); font-size:.92rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Shorts Lab - Psychology Neon</h1>
+  <p class="lede">A private creator automation tool for the Psychology Neon YouTube channel.</p>
+
+  <h2>What it is</h2>
+  <p>Shorts Lab is software that runs on the channel owner's own computer. It prepares short educational videos about
+  psychology research for <strong>Psychology Neon</strong> (<a href="https://www.youtube.com/@thepsychologyneon">@thepsychologyneon</a>),
+  the owner's own channel, and publishes them on a schedule the owner sets.</p>
+
+  <h2>What it does with YouTube</h2>
+  <ul>
+    <li>The owner signs in with Google once and connects the Psychology Neon channel.</li>
+    <li>Shorts Lab checks that the connected account is the expected channel, then uploads the channel's own finished videos
+      through the YouTube Data API. Videos are uploaded as private, either to stay private for review or with a scheduled
+      time to become public.</li>
+    <li>It reads back the status of those uploads (processing, privacy and scheduled time) to confirm each one worked.
+      If an upload's confirmation is lost, it looks at the titles of the channel's most recent uploads to find it
+      instead of uploading twice.</li>
+  </ul>
+  <p>It does not change or delete existing videos, and does not read comments, subscribers, analytics or account settings.</p>
+
+  <h2>Who can use it</h2>
+  <p>Shorts Lab is not a public service and does not accept sign-ups. It is used only by the owner of the Psychology Neon
+  channel to manage that channel.</p>
+
+  <h2>Privacy</h2>
+  <p>How Google account data is accessed, stored and protected is described in the
+  <a href="https://legacyloom.me/shorts-lab/privacy/">Shorts Lab privacy policy</a>.</p>
+
+  <footer>
+    <p>Contact: <a href="mailto:kokoclip007@gmail.com">kokoclip007@gmail.com</a> ·
+    <a href="https://legacyloom.me/shorts-lab/privacy/">Privacy policy</a></p>
+  </footer>
+</main>
+</body>
+</html>
